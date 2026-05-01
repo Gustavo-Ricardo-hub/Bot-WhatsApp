@@ -1,12 +1,12 @@
-CREATE DATABASE suporte_bot;
+CREATE DATABASE IF NOT EXISTS suporte_bot;
 
 USE suporte_bot;
 
-CREATE TABLE chamados (
+CREATE TABLE IF NOT EXISTS chamados (
   id INT AUTO_INCREMENT PRIMARY KEY,
-  numero VARCHAR(30),
+  numero VARCHAR(30) UNIQUE,
   usuario VARCHAR(50),
   problema TEXT,
   status VARCHAR(20),
-  data_abertura DATETIME
+  data_abertura DATETIME DEFAULT CURRENT_TIMESTAMP
 );
